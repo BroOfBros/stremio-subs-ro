@@ -26,13 +26,6 @@ npm start
 
 Open http://localhost:7000 to configure.
 
-## Deploy to BeamUp
-
-```bash
-npm install -g beamup-cli
-beamup
-```
-
 ## License
 
 ISC
