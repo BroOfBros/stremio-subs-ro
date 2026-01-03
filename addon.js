@@ -98,14 +98,10 @@ const subtitlesHandler = async ({ type, id, extra, config }) => {
       // Rank by filename similarity if videoFilename is available
       if (videoFilename && filtered.length > 1) {
         filtered.sort((a, b) => {
-          const scoreA = tokenSimilarity(
-            videoFilename,
-            a.description || a.title || ""
-          );
-          const scoreB = tokenSimilarity(
-            videoFilename,
-            b.description || b.title || ""
-          );
+          const textA = `${a.title || ""} ${a.description || ""}`;
+          const textB = `${b.title || ""} ${b.description || ""}`;
+          const scoreA = tokenSimilarity(videoFilename, textA);
+          const scoreB = tokenSimilarity(videoFilename, textB);
           return scoreB - scoreA; // Higher score first
         });
       }
