@@ -35,7 +35,7 @@ cd stremio-subs-ro && npm install && npm start
 
 ## ☕ Susține
 
-Dacă ți se pare util acest addon, poți să-mi [oferi o cafea](https://buymeacoffee.com/allecsc)!
+Dacă ți se pare util acest addon, poți să-mi [oferi o cafea](https://ko-fi.com/allecsc)!
 
 ## 📄 Licență
 
@@ -57,7 +57,7 @@ A Stremio addon that fetches high-quality Romanian subtitles from [subs.ro](http
 
 ### ✨ Features
 
-- �🇷🇴 **High Quality Romanian Subtitles**: Directly from subs.ro
+- 🇷🇴 **High Quality Romanian Subtitles**: Directly from subs.ro
 - ⚡ **Fast & Reliable**: Optimized rate limiting and caching
 - 🎯 **Smart Matching**: Custom scoring algorithm (Release Group + Source) for perfect sync
 - 🔄 **Auto-Retry**: Robust handling of network issues
@@ -72,7 +72,7 @@ cd stremio-subs-ro && npm install && npm start
 
 ## ☕ Support
 
-If you find this addon useful, you can [buy me a coffee](https://buymeacoffee.com/allecsc)!
+If you find this addon useful, you can [buy me a coffee](https://ko-fi.com/allecsc)!
 
 ## 📄 License
 
