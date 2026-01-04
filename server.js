@@ -119,5 +119,7 @@ app.get("/:config?/subtitles/:type/:id/:extra?.json", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Addon live on port ${PORT}`);
+  console.log(
+    `🚀 [${new Date().toISOString()}] Addon DEPLOYED with BeamUp Fix - Port ${PORT}`
+  );
 });

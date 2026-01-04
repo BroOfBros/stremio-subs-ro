@@ -117,8 +117,11 @@ const subtitlesHandler = async ({ type, id, extra, config }) => {
 
   const fetchTask = (async () => {
     try {
+      const ts = () => new Date().toISOString().slice(11, 23);
+      console.log(`[${ts()}] [SUBS] Searching for ${imdbId} (${type})`);
       const subsRo = getClient(config.apiKey);
       const results = await subsRo.searchByImdb(imdbId);
+      console.log(`[${ts()}] [SUBS] Found ${results.length} results from API`);
 
       // Filter by language
       let filteredResults = results;
