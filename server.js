@@ -38,6 +38,7 @@ const decodeConfig = (configStr) => {
 };
 
 app.get("/", (req, res) => res.redirect("/configure.html"));
+app.get("/configure", (req, res) => res.redirect("/configure.html"));
 app.get("/:config/configure", (req, res) => res.redirect("/configure.html"));
 
 // Manifest
