@@ -48,8 +48,8 @@ app.get("/:config/configure", (req, res) =>
   res.sendFile(path.join(__dirname, "public", "configure.html"))
 );
 
-// Manifest
-app.get("/:config?/manifest.json", (req, res) => {
+// Manifest handler (shared by all manifest routes)
+const manifestHandler = (req, res) => {
   const { config } = req.params;
   const userConfig = decodeConfig(config);
   const hasConfig = config && Object.keys(userConfig).length > 0;
@@ -65,7 +65,13 @@ app.get("/:config?/manifest.json", (req, res) => {
 
   res.set("Cache-Control", "public, max-age=86400"); // 1 day
   res.json(manifest);
-});
+};
+
+// Manifest routes (both /manifest and /manifest.json work)
+app.get("/manifest", manifestHandler);
+app.get("/manifest.json", manifestHandler);
+app.get("/:config/manifest", manifestHandler);
+app.get("/:config/manifest.json", manifestHandler);
 
 // API Validation Endpoint
 app.get("/api/validate/:apiKey", async (req, res) => {
