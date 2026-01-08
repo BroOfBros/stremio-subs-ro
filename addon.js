@@ -51,7 +51,7 @@ function parseStremioId(id) {
 async function getArchiveSrtList(apiKey, subId) {
   const cacheKey = `archive_${subId}`;
   const cached = ARCHIVE_CACHE.get(cacheKey);
-  if (cached && Date.now() - cached.timestamp < ARCHIVE_CACHE_TTL) {
+  if (cached) {
     return cached.srtFiles;
   }
 
@@ -93,8 +93,7 @@ async function getArchiveSrtList(apiKey, subId) {
 const subtitlesHandler = async ({ type, id, extra, config }) => {
   if (!config || !config.apiKey) return { subtitles: [] };
 
-  // Clear any pending requests from previous title
-  globalLimiter.clearQueues();
+  // NOTE: Removed globalLimiter.clearQueues() - it was causing users to cancel each other's downloads
 
   const { imdbId, season, episode } = parseStremioId(id);
   const isSeries = type === "series" && episode !== null;

@@ -133,6 +133,14 @@
         font-size: 1rem;
       }
 
+      /* Hide browser's native password reveal button */
+      input[type="password"]::-ms-reveal,
+      input[type="password"]::-ms-clear,
+      input[type="password"]::-webkit-credentials-auto-fill-button,
+      input[type="password"]::-webkit-textfield-decoration-container {
+        display: none !important;
+      }
+
       input:focus {
         outline: none;
         border-color: var(--brand-primary);
@@ -519,23 +527,18 @@
 
       <!-- Support Section -->
       <div class="support-section">
-        <div class="support-msg" data-i18n="supportMsg">Îți place acest addon? Susține dezvoltarea!</div>
+        <div class="support-msg" data-i18n="supportMsg">Îți place addon-ul? Susține proiectul.</div>
         <a href="https://revolut.me/altcelalalt" target="_blank" class="donate-btn">
-             <!-- Modified: replaced SVG with Revolut Image -->
-             <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Revolut_logo.svg" alt="Revolut" style="height: 18px; width: auto; filter: brightness(0) invert(1);">
-             <span data-i18n="donateBtn">Susține pe Revolut</span>
+             <img src="revolut.svg" alt="Revolut" style="height: 18px; width: auto; filter: brightness(0) invert(1);">
+             <span>Revolut Pay</span>
         </a>
       </div>
     </div>
 
-    <!-- Footer moved outside container -->
+    <!-- Footer -->
     <div class="footer">
       <p>
-          <span data-i18n="footer">Dezvoltat de</span> <a href="https://github.com/allecsc" target="_blank">allecsc</a>
-          <br>
-          <span style="font-size: 0.75rem; opacity: 0.8;">
-              <span data-i18n="powered">Susținut de</span> <a href="https://subs.ro" target="_blank">subs.ro</a>
-          </span>
+        <span data-i18n="footer">Dezvoltat de</span> <a href="https://github.com/allecsc" target="_blank">allecsc</a> • <span data-i18n="powered">Oferit de</span> <a href="https://subs.ro" target="_blank">subs.ro</a>
       </p>
     </div>
 
@@ -553,11 +556,11 @@
           btnChecking: "...",
           btnValid: "Valid! ✓",
           btnInvalid: "Invalid ✕",
-          supportMsg: "Îți place acest addon? Susține dezvoltarea!",
+          supportMsg: "Îți place addon-ul? Susține proiectul.",
           donateBtn: "Susține pe Revolut",
           switchLang: "EN",
           footer: "Dezvoltat de",
-          powered: "Susținut de",
+          powered: "Oferit de",
           manualLinkText: "Dacă deschiderea automată eșuează, copiați acest link în Stremio:",
           copyBtn: "Copiază Link",
           other: "Altele",
@@ -574,11 +577,11 @@
           btnChecking: "...",
           btnValid: "Valid! ✓",
           btnInvalid: "Invalid ✕",
-          supportMsg: "Like this addon? Support development!",
+          supportMsg: "Enjoying the addon? Support the project.",
           donateBtn: "Support on Revolut",
           switchLang: "RO",
           footer: "Developed by",
-          powered: "Powered by",
+          powered: "Provided by",
           manualLinkText: "If automatic opening fails, copy this link into Stremio:",
           copyBtn: "Copy Link",
           other: "Other",
